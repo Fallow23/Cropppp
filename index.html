@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="en-gb">
+  
+  <head>
+    
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width">
+
+    <title>Tiny Me - URL Shortener</title>
+
+    <link rel="shortcut icon" href="/tinyme.png" type="image/x-icon">
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+
+    <style>
+    body {
+    font-family: "Lora", sans-serif;
+    }
+    </style>
+
+    <style>
+.container {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+</style>
+
+  </head>
+  
+  <body>
+
+    <div>
+      <table>
+        <tr>
+          <th><img src="/tinyme.png" alt="Tiny Me Logo" width="25px"></th>
+          <th><h4><a href="https://Tiny-Me-Website.aishalanre.repl.co">Tiny<b> Me</b></a></h4></th>
+        </tr>
+      </table>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">Home</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- Use any element to open the sidenav -->
+<span onclick="openNav()"><div class="container-right" onclick="">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+
+    </div>
+    
+    </span>
+
+    </div>
+
+    <section id="about" class="section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="heading">
+
+                      <img src="https://image.freepik.com/free-vector/characters-global-communication-concept-illustration_53876-59903.jpg" alt="Link Shortening" class="center"  width="350px">
+    
+    
+                        <h3><center>Trim Any Links</center></h3>
+                        <p><center>Build and promote your brand/service with a unique short link every time. <b><i>It's free forever</i></b>.</center></p>
+
+                          <div>
+
+                            <form>
+
+    <input type="url" id="urlinput" placeholder="Type or Paste Your Link" value autocomplete="off" required />
+    
+    <button onclick="shorturl()" type="button">Make me tiny!</button>
+
+    </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="heading">
+                        <h2><center>Meet Our Team<hr></center></h2>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0 text-center">
+                    <div class="testimonial-block">
+                        <i class="tf-ion-quote"></i>
+                        <p><center>
+                            Whaddup! I am Aisha, an undergraduate student who finds solace in writing books  and discovering new adventures.</center>
+                        </p>
+                    </div>
+                </div>
+              </div>
+        </div>
+    </section>
+    
+<section id="contact" class="section">
+    <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="heading">
+                      <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0 text-center">
+                      <h2><center>Contact<hr></center></h2>
+		                  <p><center>Feel free to contact us by <a  href=mailto:contact@tiny.me>email</a>!</center></p>
+                      </div>
+		                </div>          
+                 </div>
+               </div>
+    </div>
+</section>
+
+    <script src="script.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</script>
+    
+  </body>
+
+</html>
