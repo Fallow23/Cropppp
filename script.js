@@ -1,6 +1,7 @@
 /* Set the width of the side navigation to 250px */
 function openNav() {
   document.getElementById("mySidenav").style.width = "150px";
+  console.log(window.location.pathname)
 }
 
 /* Set the width of the side navigation to 0 */
@@ -12,9 +13,9 @@ var endpoint = "https://jsonbox.io/box_ccb774670a8882eb3725";
 
 function geturl(){
     var url = document.getElementById("urlinput").value;
-    var protocol_ok = url.startsWith("http://") || url.startsWith("https://") || url.startsWith("ftp://");
+    var protocol_ok = url.startsWith("http://") || url.startsWith("https://");
     if(!protocol_ok){
-        newurl = "http://"+url;
+        newurl = "https://"+url;
         return newurl;
         }
     else{
