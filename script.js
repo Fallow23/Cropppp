@@ -1,11 +1,11 @@
 const config = {
-  apiKey: "AIzaSyCRvn3zjYAl9xRjEPpdB4zzwejSNOrtuo4",
-  authDomain: "cropppp.firebaseapp.com",
-  projectId: "cropppp",
-  storageBucket: "cropppp.appspot.com",
-  messagingSenderId: "467531085978",
-  appId: "1:467531085978:web:d34d3ebfdf2467fc8fc723",
-  measurementId: "G-YP2NXJVDRJ"
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: ""
 };
 firebase.initializeApp(config);
 var firestore = firebase.firestore()
