@@ -19,11 +19,11 @@ The original designs of how the Google Chrome Application should look like were 
 
 ## Challenges I ran into
 
-Although the project was meant to be implementable, I ran into faults trying to get a free .me domain and building the project into a Chrome Extension due to my lack of JavaScript knowledge. The only solution I could come up with to solve the problem of submitting the project earlier was to make a UI/UX design.
+Although the project was meant to be implementable, I ran into faults trying to get a free .me domain and building the project into a Chrome Extension due to my lack of JavaScript knowledge.
 
 ## Accomplishments that I'm proud of
 
-I'm proud of being able to come up with a grand idea like Tiny Me and finish it up but not too happy with the fact that it isn't usable, yet.
+I'm proud of being able to come up with a grand idea like Tiny Me and finish it up.
 
 ## What I learned
 
