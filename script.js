@@ -1,15 +1,38 @@
-/* Set the width of the side navigation to 250px */
-function openNav() {
-  document.getElementById("mySidenav").style.width = "150px";
-  console.log(window.location.pathname)
+const config = {
+  apiKey: "AIzaSyCRvn3zjYAl9xRjEPpdB4zzwejSNOrtuo4",
+  authDomain: "cropppp.firebaseapp.com",
+  projectId: "cropppp",
+  storageBucket: "cropppp.appspot.com",
+  messagingSenderId: "467531085978",
+  appId: "1:467531085978:web:d34d3ebfdf2467fc8fc723",
+  measurementId: "G-YP2NXJVDRJ"
+};
+firebase.initializeApp(config);
+var firestore = firebase.firestore()
+var collection = firestore.collection("links")
+var pathname = window.location.pathname.substring(1);
+const fetchData = () => {
+          collection.get().then( (links) => {
+            let linkslist = [];    
+            links.forEach((link) => {
+              let data = link.data();
+              linkslist.push({
+                id: data.id,
+                url: data.url
+              });
+            });
+            const link = linkslist.find(link => link.id === pathname)
+            if(pathname !== ""){
+              if(link !== undefined){
+                window.location.replace(link.url)
+              }
+              else{
+                alert("invalid url")
+              }
+            }
+          })
 }
-
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
-
-var endpoint = "https://jsonbox.io/box_ccb774670a8882eb3725";
+window.onload = fetchData()
 
 function geturl(){
     var url = document.getElementById("urlinput").value;
@@ -17,7 +40,7 @@ function geturl(){
     if(!protocol_ok){
         newurl = "https://"+url;
         return newurl;
-        }
+      }
     else{
             return url;
         }
@@ -26,44 +49,34 @@ function geturl(){
 function getrandom() {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
     for (var i = 0; i < 5; i++)
         text += possible.charAt(Math.floor(Math.random() * possible.length));
     return text;
 }
-
-function genhash(){
-    if (window.location.hash == ""){
-        window.location.hash = getrandom();
-    }
-}
-
+var id = getrandom()
 function send_request(url) {
     this.url = url;
-        $.ajax({
-        'url': endpoint,
-        'type': 'POST',
-        'data': JSON.stringify({url: this.url, hash: this.hash}),
-        'dataType': 'json',
-        'contentType': 'application/json; charset=utf-8'
-})
+    collection.add({
+      id: id,
+      url: this.url
+    })
 }
 
 function shorturl(){
     var longurl = geturl();
-    genhash();
     send_request(longurl);
+    document.getElementById("shortlink").style.display = "block"
+    var shortenedlink = window.location + id;
+    document.getElementById("shortlinkanchor").value = shortenedlink
+    document.getElementById("shortlinkanchor").setAttribute("href",shortenedlink)
 }
 
-var hashh = window.location.hash.substr(1)
+/* Set the width of the side navigation to 250px */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "150px";
+}
 
-if (window.location.hash != "") {
-    $.getJSON(endpoint + "/" + hashh, function (data) {
-        data = data["result"];
-        location.assign();
-
-        if (data != null) {
-            window.location.href = data;
-        }
-    });
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
 }

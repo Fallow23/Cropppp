@@ -1,7 +1,38 @@
+.container {
+  display: inline-block;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
 h4{
-
 font-family: 'Lora', serif;
+}
 
+#shortlink{
+  display: none;
+  font-family: 'Lora', serif;
+}
+#shortlinkanchor{
+  font-size: 2rem;
+  color: #4a4fbc;
 }
 
 h2{
