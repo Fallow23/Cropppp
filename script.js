@@ -53,21 +53,22 @@ function getrandom() {
         text += possible.charAt(Math.floor(Math.random() * possible.length));
     return text;
 }
-var id = getrandom()
-function send_request(url) {
+function send_request(id, url) {
+    this.id = id;
     this.url = url;
     collection.add({
-      id: id,
+      id: this.id,
       url: this.url
     })
 }
 
 function shorturl(){
+    var id = getrandom()
     var longurl = geturl();
-    send_request(longurl);
+    send_request(id, longurl);
     document.getElementById("shortlink").style.display = "block"
-    var shortenedlink = window.location + id;
-    document.getElementById("shortlinkanchor").value = shortenedlink
+    var shortenedlink = window.location.href + id;
+    document.getElementById("shortlinkanchor").innerHTML = shortenedlink
     document.getElementById("shortlinkanchor").setAttribute("href",shortenedlink)
 }
 
